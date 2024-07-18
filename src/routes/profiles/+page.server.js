@@ -1,3 +1,4 @@
+import { BACKEND_URL } from '$env/static/private';
 import { error } from '@sveltejs/kit';
 
 export async function load({ url, fetch }) {
@@ -10,9 +11,9 @@ export async function load({ url, fetch }) {
     }
     let uri = ''
     if (value == '') {
-        uri = `http://localhost:8000/staffs/?limit=${limit}&page=${page}`
+        uri = BACKEND_URL + `/staffs/?limit=${limit}&page=${page}`
     } else {
-        uri = `http://localhost:8000/staffs/?searchQuery=${value}&limit=${limit}&page=${page}`
+        uri = BACKEND_URL + `/staffs/?searchQuery=${value}&limit=${limit}&page=${page}`
     }
 
     const res = await fetch(uri);

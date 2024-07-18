@@ -12,9 +12,9 @@ export async function load({ url, fetch }) {
         }
         let uri = ''
         if (value == '') {
-            uri = BACKEND_URL + `publications/?limit=${limit}&page=${page}`
+            uri = BACKEND_URL + `/publications/?limit=${limit}&page=${page}`
         } else {
-            uri = BACKEND_URL + `publications/?limit=${limit}&page=${page}&search_query=${value}`
+            uri = BACKEND_URL + `/publications/?limit=${limit}&page=${page}&search_query=${value}`
         }
 
         const res = await fetch(uri);

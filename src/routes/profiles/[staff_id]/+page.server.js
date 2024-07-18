@@ -1,12 +1,13 @@
+import { BACKEND_URL } from '$env/static/private';
 import { error } from '@sveltejs/kit';
 
 export async function load({ fetch, params }) {
     const {staff_id} = params
 
-    const uri = `http://localhost:8000/staffs/profile/${staff_id}/`
+    const uri = BACKEND_URL + `/staffs/profile/${staff_id}/`
     const res = await fetch(uri);
 
-    const yearlyCountURI = `http://localhost:8000/publications/count/yearly/?filter_by=staff_id&value=${staff_id}`
+    const yearlyCountURI = BACKEND_URL + `/publications/count/yearly/?filter_by=staff_id&value=${staff_id}`
     const yearlyCountResponse = await fetch(yearlyCountURI);
     
     const data = await res.json();

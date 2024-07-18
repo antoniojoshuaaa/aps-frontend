@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .nav-link{
+        @apply mr-4
+    }
+    .container-body{
+       @apply w-full align-middle
+    }
+    .link-hover{
+        @apply hover:underline hover:text-orange-500 text-blue-800
+    }
+    .overview-heading {
+        @apply text-2xl tracking-widest mt-10
+    }
+    .publication-sidebar-header {
+        @apply font-semibold mt-2
+    }
+}

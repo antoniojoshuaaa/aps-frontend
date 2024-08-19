@@ -60,7 +60,11 @@
         <div class="m-5 col-span-5">
             <div>
                 <h1 class="text-2xl font-semibold">Abstract</h1>
-                <p>{data['publicationData']['dc:description']}</p>    
+                {#if data['publicationData']['dc:description']}
+                    <p>{data['publicationData']['dc:description']}</p>
+                {:else}
+                    <p>Abstract for this publication is unavailable.</p>
+                {/if}
             </div>
             {#if authKeywords}
             <div class="mt-10">

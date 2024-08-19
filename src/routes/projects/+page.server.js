@@ -21,7 +21,8 @@ export async function load({ url, fetch }) {
         const data = await res.json();
         let total = 0
         if (data) {
-            total = data.length
+            console.log(data)
+            total = data.results.length
             return {
                 projects: data,
                 total: total,

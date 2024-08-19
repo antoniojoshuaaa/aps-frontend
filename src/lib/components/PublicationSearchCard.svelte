@@ -21,7 +21,14 @@
                 et al.
             {/if}
         </p>
-        <p>Keywords: {output['authkeywords']}</p>
+        <p>
+            Keywords:
+            {#if output['authkeywords']}
+                {output['authkeywords']}
+            {:else}
+                -
+            {/if}
+        </p>
         <p>{output['prism:aggregationType']} {output['subtypeDescription']}, {output['prism:coverDisplayDate']}</p>
     </div>
 </div>

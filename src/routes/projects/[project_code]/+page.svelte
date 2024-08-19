@@ -1,7 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
     export let data;
-    console.log(data)
     const collaborators = data['project']['collaborators'].replaceAll('; ', ' | ') || ''
     const staffName = toTitleCase(data['project']['staff']['staff_name'])
     function toTitleCase(str) {

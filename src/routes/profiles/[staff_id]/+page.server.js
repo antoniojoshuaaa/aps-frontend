@@ -12,7 +12,6 @@ export async function load({ fetch, params }) {
     
     const data = await res.json();
     const yearlyCountData = await yearlyCountResponse.json();
-    console.log(yearlyCountData)
     return {
         staffId: data['staff_id'],
         staffName: data['staff_name'],

@@ -12,7 +12,7 @@ export async function load({ fetch, params }) {
     const data = await res.json();
     return {
         publicationData: data['abstracts-retrieval-response']['coredata'],
-        authKeywords: data['abstracts-retrieval-response']['authkeywords']['author-keyword'],
+        authKeywords: data['abstracts-retrieval-response']['authkeywords'] ? data['abstracts-retrieval-response']['authkeywords']['author-keyword'] || undefined : undefined,
         authors: data['abstracts-retrieval-response']['authors']['author'],
     };
 }

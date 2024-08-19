@@ -3,7 +3,6 @@
     import {goto} from "$app/navigation";
 	import ProjectsSearchCard from '$lib/components/ProjectSearchCard.svelte';
 	export let data
-    console.log(data)
 
 	let pageSize = 10;
 	let value = data.queryValue;
